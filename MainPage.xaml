@@ -6,7 +6,16 @@
 
     <CollectionView>
         <CollectionView.ItemsSource>
-            
+            <x:Array Type="{x:Type model:Monkey}">
+                <model:Monkey Name="Baboon"/>
+                <model:Monkey Name="Capuchin Monkey"/>
+                <model:Monkey Name="Red-shanked douc"/>
+            </x:Array>
         </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Monkey">
+                
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
     </CollectionView>
 </ContentPage>
