@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
-namespace TTHKApp.Model
+namespace MonkeyFinder.Model;
+
+public class Monkey
 {
-    public class Monkey
-    {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
-        public class Root
-        {
-            public string Name { get; set; }
-            public string Location { get; set; }
-            public string Details { get; set; }
-            public string Image { get; set; }
-            public int Population { get; set; }
-            public double Latitude { get; set; }
-            public double Longitude { get; set; }
-        }
+    public string Name { get; set; }
+    public string Location { get; set; }
+    public string Details { get; set; }
+    public string Image { get; set; }
+    public int Population { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
+}
 
+[JsonSerializable(typeof(List<Monkey>))]
+internal sealed partial class MonkeyContext : JsonSerializerContext
+{
 
-    }
 }
