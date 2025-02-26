@@ -57,21 +57,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidJavaSource Remove="ViewModel\**" />
-	  <AndroidLibrary Remove="ViewModel\**" />
-	  <AndroidNativeLibrary Remove="ViewModel\**" />
-	  <Compile Remove="ViewModel\**" />
-	  <EmbeddedResource Remove="ViewModel\**" />
-	  <JavaSourceJar Remove="ViewModel\**" />
-	  <None Remove="ViewModel\**" />
-	  <ProguardConfiguration Remove="ViewModel\**" />
-	  <TransformFile Remove="ViewModel\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="View\DetailsPage.xaml.cs">
+	    <DependentUpon>DetailsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\DetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
